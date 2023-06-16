@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
+    ViewData["Title"] = "Menu";
+    String source = $"/images/banners/banner{@ViewData["BannerNr"]}.jpg";
+}
+
+<div>
+    <header style="text-align:center;">
+        <img  src=@source alt="banner" style="max-width:100%;" />
+    </header>
+    <div>
+        <div style="text-align:center;">
+            <a asp-controller="Info" asp-action="ListRaces">
+                <img src="~/images/banners/races.png" alt="races" />
+            </a>
+            
+            <a asp-controller="Info" asp-action="ListTeams">
+                <img src="~/images/banners/teams.png" alt="teams" />
+            </a>
+            
+        </div>
+        <div style="text-align:center;">
+            <a asp-controller="Info" asp-action="ListRiders">
+                <img src="~/images/banners/riders.png" alt="riders" />
+            </a>
+            
+            <a asp-controller="Shop" asp-action="OrderTicket">
+                <img src="~/images/banners/tickets.png" alt="tickets" />
+            </a>
+            
+        </div>
+    </div>
+    <footer>
+        <a asp-controller="Shop" asp-action="ListTickets">Admin Tickets</a>
+    </footer>
+</div>

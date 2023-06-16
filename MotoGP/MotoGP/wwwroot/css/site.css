@@ -1,0 +1,20 @@
+﻿body {
+    font-size: 13px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+h1 {
+    color: crimson;
+}
+
+.card {
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: gray;
+   
+    margin: 10px;
+}
+
+    .card img {
+        max-width: 100%;
+    }

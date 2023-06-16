@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Team>
+@{
+    ViewData["Title"] = "Teams";
+    ViewData["BannerNr"] = 2;
+}
+
+<div style ="display: flex;flex-wrap: wrap">
+    @foreach(var item in Model)
+    {
+        var source = $"/images/teams/{item.Logo}";
+        <div style="width: 30%;">
+            <div class="card">
+                <figure style="background-color:lightgray;text-align:center;padding-top:20px;">
+                    <img src=@source alt=@item.Name />
+                    <figcaption>@item.Name</figcaption>
+                    <ul style="padding:5px;list-style-type:none;">
+                    @foreach(var rider in item.Riders)
+                    {
+                        <li>@rider.FirstName @rider.LastName</li>
+                    }
+                </ul>
+                </figure> 
+                
+            </div>
+        </div>
+    }
+    <p><a asp-action="ListTeamsRiders" asp-controller="Info">Teams & Riders</a></p>
+</div>

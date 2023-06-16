@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "SsUnhN9fFHeSkLo1DECKt9PZiSjGNSkZDLqmRVm7sWgYTD+aai1UV5FuIhhvd2hs4im0kfVwIWLnu3idYMWxlA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rafen\\Desktop\\Nieuwe map\\DotNet\\www\\S2\\ExerciseDI_FeedReader - start\\ExerciseDI_FeedReader\\ExerciseDI_FeedReader.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rafen\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\rafen\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

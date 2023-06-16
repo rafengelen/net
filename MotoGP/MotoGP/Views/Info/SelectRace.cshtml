@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model MotoGP.Models.ViewModels.SelectRaceViewModel
+@{
+    //var races = (IEnumerable<SelectListItem>)ViewData["Races"];
+}
+<div>
+    
+    <form asp-controller="Info" asp-action="SelectRace" method="get">
+        <select asp-for="raceID" asp-items=@Model.Races onchange="this.form.submit()">
+        <option value="0">~~Select a race~~</option>
+    </select>
+    
+    </form>
+    @if(Model.Race != null){
+        var source = $"/images/races/{Model.Race.RaceID}.jpg";
+        <img src=@source alt=@Model.Race.Name/>
+        <div>
+            <p>@Model.Race.Name - @Model.Race.Country</p>
+            <p>@Html.DisplayNameFor(model =>model.Race.Length): @Html.DisplayFor(model =>model.Race.Length) m</p>
+            <p>@Html.DisplayNameFor(model =>model.Race.Date): @Html.DisplayFor(model =>model.Race.Date)</p>
+            <br/>
+            <p>@Model.Race.Description</p>
+        </div>
+    }
+
+    <p><a asp-action="ListRaces" asp-controller="Info">Back</a></p>
+</div>

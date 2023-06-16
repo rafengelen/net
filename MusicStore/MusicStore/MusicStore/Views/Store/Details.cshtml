@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Album
+@{
+    ViewData["Title"] = "Album Details";
+    var source = $"/content/{Model.AlbumArtUrl}";
+}
+<div>
+    <h3>@Model.Title</h3>
+    <hr/>
+    <img src=@source alt=@Model.Title />
+    <p><span style="font-style:italic;">@Html.DisplayNameFor(m=>m.GenreID): </span>@Html.DisplayFor(m=>m.Genre.Name)</p>
+    <p><span style="font-style:italic;">@Html.DisplayNameFor(m=>m.ArtistID): </span>@Html.DisplayFor(m=>m.Artist.Name)</p>
+    <p><span style="font-style:italic;">@Html.DisplayNameFor(m=>m.Price): </span>@Html.DisplayFor(m=>m.Price)</p>
+    <p><a asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-id="@Model.AlbumID">Add to cart</a></p>
+    <p><a asp-controller="Store" asp-action="ListAlbums" asp-route-id="@Model.GenreID">Back</a></p>
+</div>

@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Album>
+@{
+    ViewData["Title"] = "Albums";
+}
+@using MusicStore.Helpers
+<h3> Albums</h3>
+<ul class="row list-unstyled" id="album-list">
+    @foreach (var album in Model)
+    {
+        var source = $"/content/{album.AlbumArtUrl}";
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 container">
+                    <a asp-controller="Store" asp-action="Details" asp-route-id="@album.AlbumID">
+                        <img alt="@album.Title" src=@source width="100" />
+                        <br />&nbsp;<br />
+                <div id="title">@TitleHelper.Truncate(album.Title, 20)</div>
+                    </a>
+                </li>
+    }
+    </ul>

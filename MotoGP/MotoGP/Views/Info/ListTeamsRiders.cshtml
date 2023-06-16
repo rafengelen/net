@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model MotoGP.Models.ViewModels.SelectTeamViewModel
+@{
+    ViewData["Title"] = "Teams & Riders";
+    ViewData["BannerNr"] = 2;
+}
+
+<div>
+    <div>
+    @foreach(var item in Model.Teams)
+    {
+        var source = $"/images/teams/{item.Logo}";
+        <div style="background-color:lightgray;padding:5px;display:inline;">
+            
+                    <a asp-controller="Info" asp-action="ListTeamsRiders" asp-route-id="@item.TeamID"><img src=@source /></a>
+                    
+          
+            
+        </div>
+    }
+    </div>
+    @if (Model.Riders != null)
+    {
+        <div style="display: flex;flex-wrap: wrap">
+            @foreach (var item in Model.Riders)
+            {
+
+                string sourcePicture = $"/images/riders/{item.Number}.jpg";
+                string sourceFlag = $"/images/flags/{item.CountryID}.png";
+
+                <div style="width: 30%;">
+                    <div class="card" style="style=" background-color:lightgray;text-align:center;">
+
+                        <img src=@sourcePicture />
+
+                        <div>
+
+                            <img src=@sourceFlag />
+                            <h2 style="display:inline-block;text-align:right">@item.Number</h2>
+                            <p style="color:darkgray;">@item.FirstName @item.LastName</p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    }
+    
+    <p><a asp-controller="Info" asp-action="ListTeams">Back</a></p>
+</div>

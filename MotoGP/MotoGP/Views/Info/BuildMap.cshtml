@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Race>
+@{
+   
+}
+<div>
+    
+    <img alt="Map with races" src="~/images/banners/map.png" usemap="#workmap"/>
+    
+    <map name="workmap">
+        
+        @{
+            
+            foreach (var race in Model)
+            {
+
+                <area shape="circle" coords="@race.X, @race.Y, 100" alt=@race.Name href=@Url.Action("ShowRace","Info", new { id = race.RaceID }) />
+                
+            
+            }
+            }
+        
+    </map>
+    <p>
+
+   
+    <a asp-controller="Home" asp-action="Menu">
+        Back
+    </a>
+    </p>
+</div>

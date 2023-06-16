@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Race>
+@{
+    List<String> doneMonths = new List<string>();
+}
+<div>
+    <div>
+        @{
+            foreach (var race in Model)
+            {
+                String month = char.ToUpper(@race.Date.ToString("MMMM")[0]) + @race.Date.ToString("MMMM").Substring(1);
+
+                if (!doneMonths.Contains(month))
+                {
+                    <h2>@month</h2>
+                    doneMonths.Add(month);
+                }
+                <p style="margin: 0px;padding: 0px">@(Html.DisplayFor(modelItem => race.Date)) <a asp-controller="Info" asp-action="ShowRace" asp-route-id="@race.RaceID">@race.Name</a> </p>
+            }
+        }
+    </div>
+    <p>
+        <a asp-controller="Home" asp-action="Menu">Back</a> | 
+        <a asp-controller="Info" asp-action="BuildMap">Races on map</a> | 
+        <a asp-controller="Info" asp-action="SelectRace">One by one</a>
+    </p>
+</div>

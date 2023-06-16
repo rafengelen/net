@@ -1,0 +1,14 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Ticket
+@{
+    ViewData["BannerNr"] = 3;
+    ViewData["Title"] = "Confirmation";
+}
+<div>
+    
+
+    <p>Thank you <b>@Model.Name</b> for ordering tickets for the race in <b>@Model.Race.Name</b> on <b>@Html.DisplayFor(model => model.Race.Date)</b>. Your booking is registered on <b>@Html.DisplayFor(model => model.OrderDate)</b>. We will send <b>@Model.Number</b> tickets as sonn as possible.</p>
+    <p><a asp-controller="Home" asp-action="Menu">Back</a></p>
+</div>

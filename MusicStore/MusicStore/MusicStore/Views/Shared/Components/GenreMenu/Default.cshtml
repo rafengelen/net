@@ -1,0 +1,16 @@
+﻿@model IEnumerable<MusicStore.Models.Genre>
+
+    <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+            Genres
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        @foreach(var item in @Model)
+        {
+            
+            <a asp-area="" asp-controller="Store" asp-action="ListAlbums" asp-route-id="@item.GenreID" class="dropdown-item">@item.Name</a>
+        }
+            <div class="dropdown-divider"></div>
+            <a asp-area="" asp-controller="Store" asp-action="ListGenres" class="dropdown-item">More...</a>
+        </div>
+    </li>

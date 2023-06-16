@@ -1,0 +1,29 @@
+﻿@{
+    var banners = new List<String>
+            { "bannerRaces.jpg", "bannerRiders.jpg", "bannerTeams.jpg", "bannerTickets.jpg" };
+    String source = $"/images/banners/{banners[Convert.ToInt32(@ViewData["BannerNr"])]}";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - MotoGP</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <a asp-controller="Home" asp-action="Index">
+            <img src=@source alt="banner"/>
+        </a>
+        
+        <h1>
+            @ViewData["Title"]
+        </h1>
+    </header>
+    
+        @RenderBody()
+    
+</body>
+</html>

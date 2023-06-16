@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model MotoGP.Models.ViewModels.ListTicketsViewModel
+@{
+    ViewData["Title"] = "Ordered tickets";
+    ViewData["BannerNr"] = 3; 
+}
+<div>
+    <form method="get" asp-action="ListTickets" asp-controller="Shop">
+        <select asp-items=@Model.RacesList onchange="this.form.submit()" asp-for="raceID">
+            <option value="0">~~Select a race~~</option>
+        </select>
+    </form>
+    @if(@Model.Tickets.Count==0){
+        <p>No tickets ordered for this race yet.</p>
+    }
+    else{
+    <table>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Tickets[0].OrderDate)</th>
+            <th>@Html.DisplayNameFor(model => model.Tickets[0].Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Tickets[0].Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Tickets[0].Address)</th>
+            <th>@Html.DisplayNameFor(model => model.Tickets[0].Country.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Tickets[0].Race.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Tickets[0].Number)</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.Tickets)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem=>item.OrderDate)</td>
+                <td>@Html.DisplayFor(modelItem=>item.Name)</td>
+                <td>@Html.DisplayFor(modelItem=>item.Email)</td>
+                <td>@Html.DisplayFor(modelItem=>item.Address)</td>
+                <td>@Html.DisplayFor(modelItem=>item.Country.Name)</td>
+                <td>@Html.DisplayFor(modelItem=>item.Race.Name)</td>
+                <td>@Html.DisplayFor(modelItem=>item.Number)</td>
+                <td>
+                        @if (item.Paid)
+                        {
+                            <span>Paid</span>
+                        }
+                        else
+                        {
+                            <a asp-controller="Shop" asp-action="EditTicket" asp-route-id="@item.TicketID">Pay</a>
+                        }
+
+                </td>
+            </tr>
+
+        }
+    </table>
+    }
+    
+</div>
+

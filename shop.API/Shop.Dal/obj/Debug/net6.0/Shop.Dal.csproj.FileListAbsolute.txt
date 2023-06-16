@@ -1,0 +1,14 @@
+C:\Users\rafen\Desktop\DotNet\www\S2\shop.API\Shop.Dal\obj\Debug\net6.0\Shop.Dal.csproj.AssemblyReference.cache
+C:\Users\rafen\Desktop\DotNet\www\S2\shop.API\Shop.Dal\obj\Debug\net6.0\Shop.Dal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rafen\Desktop\DotNet\www\S2\shop.API\Shop.Dal\obj\Debug\net6.0\Shop.Dal.AssemblyInfoInputs.cache
+C:\Users\rafen\Desktop\DotNet\www\S2\shop.API\Shop.Dal\obj\Debug\net6.0\Shop.Dal.AssemblyInfo.cs
+C:\Users\rafen\Desktop\DotNet\www\S2\shop.API\Shop.Dal\obj\Debug\net6.0\Shop.Dal.csproj.CoreCompileInputs.cache
+C:\Users\rafen\Desktop\DotNet\www\S2\shop.API\Shop.Dal\bin\Debug\net6.0\Shop.Dal.deps.json
+C:\Users\rafen\Desktop\DotNet\www\S2\shop.API\Shop.Dal\bin\Debug\net6.0\Shop.Dal.runtimeconfig.json
+C:\Users\rafen\Desktop\DotNet\www\S2\shop.API\Shop.Dal\bin\Debug\net6.0\Shop.Dal.dll
+C:\Users\rafen\Desktop\DotNet\www\S2\shop.API\Shop.Dal\bin\Debug\net6.0\Shop.Dal.pdb
+C:\Users\rafen\Desktop\DotNet\www\S2\shop.API\Shop.Dal\obj\Debug\net6.0\Shop.Dal.dll
+C:\Users\rafen\Desktop\DotNet\www\S2\shop.API\Shop.Dal\obj\Debug\net6.0\refint\Shop.Dal.dll
+C:\Users\rafen\Desktop\DotNet\www\S2\shop.API\Shop.Dal\obj\Debug\net6.0\Shop.Dal.pdb
+C:\Users\rafen\Desktop\DotNet\www\S2\shop.API\Shop.Dal\obj\Debug\net6.0\Shop.Dal.genruntimeconfig.cache
+C:\Users\rafen\Desktop\DotNet\www\S2\shop.API\Shop.Dal\obj\Debug\net6.0\ref\Shop.Dal.dll

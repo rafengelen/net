@@ -1,0 +1,77 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model MotoGP.Models.Ticket
+@{
+    ViewData["Title"] = "Edit ticket";
+    ViewData["BannerNr"] = 3;
+}
+<div>
+  
+    <table>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(t=>t.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(t=>t.Name)
+            
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(t=>t.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(t=>t.Email)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(t=>t.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(t=>t.Address)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(t=>t.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(t=>t.Country.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(t=>t.Race)
+            </td>
+            <td>
+                @Html.DisplayFor(t=>t.Race.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(t=>t.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(t=>t.Number)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                 <form asp-action="EditTicket" asp-controller="Shop">
+                    @Html.HiddenFor(t => t.TicketID)
+                    
+
+                    <input type="checkbox" asp-for="Paid"/>
+                    <label asp-for="Paid">@Html.DisplayNameFor(t=>t.Paid)</label>
+                    <div><button type="submit">Register</button></div>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+   
+</div>

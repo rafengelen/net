@@ -1,0 +1,67 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<CartItem>
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Album.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Album.Price) (each)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Count)
+                </th>
+                <th>
+                    Total
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                var total = item.Count * item.Album.Price;
+                <tr>
+                    <td>
+                        <a asp-action="Details" asp-controller="Store" asp-route-id="@item.AlbumID">@Html.DisplayFor(modelItem => item.Album.Title)</a>
+                        
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Album.Price) euro
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Count)
+                    </td>
+                    <td>
+                        @total euro
+                    </td>
+                    <td>
+                        <a asp-controller="ShoppingCart" asp-action="AddOne" asp-route-id="@item.CartItemID">+</a> |
+                        <a asp-controller="ShoppingCart" asp-action="RemoveOne" asp-route-id="@item.CartItemID">-</a> |
+                        <a asp-controller="ShoppingCart" asp-action="RemoveFromCart" asp-route-id="@item.CartItemID">Remove</a>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td style="font-weight:bold;">Total</td>
+                <td></td>
+                <td></td>
+                @{
+                    var cartTotal = Model.Sum(m => m.Count * m.Album.Price);
+                    <td style="font-weight:bold;">@cartTotal euro</td>
+                }
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <a asp-controller="Checkout" asp-action="Create">Checkout</a> | <a asp-controller="Home" asp-action="Index">Back to Home</a>
+    </p>
+</div>

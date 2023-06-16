@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shop.API", "shop.API\shop.API.csproj", "{CA9C48BA-E0AC-47CF-9BF1-0565ECFA006E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Dal", "Shop.Dal\Shop.Dal.csproj", "{EC243CCE-A960-480D-BC78-3CEE7B26AF83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA9C48BA-E0AC-47CF-9BF1-0565ECFA006E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9C48BA-E0AC-47CF-9BF1-0565ECFA006E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9C48BA-E0AC-47CF-9BF1-0565ECFA006E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9C48BA-E0AC-47CF-9BF1-0565ECFA006E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC243CCE-A960-480D-BC78-3CEE7B26AF83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC243CCE-A960-480D-BC78-3CEE7B26AF83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC243CCE-A960-480D-BC78-3CEE7B26AF83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC243CCE-A960-480D-BC78-3CEE7B26AF83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E3F45C7-6842-4483-9E5C-D0AD0A95C7AB}
+	EndGlobalSection
+EndGlobal
